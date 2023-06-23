@@ -4,6 +4,7 @@
   <div class="col">
     <shared-search-box
       (onDebouncer)="searchByCountry($event)"
+      [initialValue]="initialValue"
       [placeholder]="placeholder"></shared-search-box>
   </div>
 </div>
@@ -11,6 +12,7 @@
 
 <div class="row">
   <div class="col">
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
     <countries-table [countries]="countries"></countries-table>
   </div>
 </div>
